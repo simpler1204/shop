@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<!-- itemDtoList   반복문-->
+<table border="1">
+    <thead>
+        <tr>
+            <th>상품명</th>
+            <th>상품상세설명</th>
+            <th>상품등록일</th>
+            <th>상품가격</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="item, status : ${itemDtoList}">
+            
+            <td th:switch="${status.even}">
+                <span th:case=true>짝수</span>
+                <span th:case=false>홀수</span>
+            </td>
+            <td th:text="${item.itemNm}"></td>
+            <td th:text="${item.itemDetail}"></td>
+            <td th:text="${item.regTime}"></td>
+            <td th:text="${item.price}"></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
