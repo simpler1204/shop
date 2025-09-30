@@ -46,6 +46,10 @@ dependencies {
 
     // 추가 의존성
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+    //layout-dialect
+    implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:3.3.0'
+
 }
 
 // QueryDSL Q클래스 생성 설정 (Spring Boot 3.x 방식)
