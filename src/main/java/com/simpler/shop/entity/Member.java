@@ -1,5 +1,6 @@
 package com.simpler.shop.entity;
 
+import com.simpler.shop.constant.Role;
 import com.simpler.shop.dto.MemberFormDto;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -30,7 +31,7 @@ public class Member {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
-    private String role;
+    private Role role;
 
     public static Member createMember(MemberFormDto memberFromDto, PasswordEncoder passwordEncoder) {
         Member member = new Member();
@@ -38,7 +39,7 @@ public class Member {
         member.setEmail(memberFromDto.getEmail());
         member.setPassword(passwordEncoder.encode(memberFromDto.getPassword()));
         member.setAddress(memberFromDto.getAddress());
-        member.setRole("ROLE_USER");
+        member.setRole(Role.USER);
         return member;
     }
 }
